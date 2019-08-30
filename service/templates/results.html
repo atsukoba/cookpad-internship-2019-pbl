@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="results">
+  <div class="color-display animated zoomIn" style="background-color:#{{ data['color'] }};">
+    <p>
+      PICK UP!
+    </p>
+  </div>
+  <div class="dots">
+    <span></span>
+    <span></span>
+  </div>
+  <!-- <form action="/search" method="get">
+    <input type="text" id="color" name="color" required minlength="6" maxlength="12" size="10" class="color-text" placeholder="FFFFFF">
+    <input type="submit" value="View" class="color-button">
+    <input type="hidden" value="100" name="n">
+  </form> -->
+
+  <ul class="image-display">
+    {% for d in data['recipes'] %}
+      <li>
+        <a href="/recipes?id={{ d.get('id') }}"
+          style="background-image: url({{ d.get('url') }});background-color: #{{ data['color'] }};"
+          class="animated fadeIn">
+          <!-- <img style="display: inline-block; width:100%; height:100%; margin:0;" src="{{ d.get('url') }}"> -->
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<script>
+  console.log(document.referrer)
+  console.log(document.referrer.length)
+</script>
+
+{% endblock %}

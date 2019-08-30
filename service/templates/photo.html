@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="photo container">
+  <h2>
+    <img src="/static/img/header-picture-white.svg">
+    <p>画像から見る</p>
+  </h2>
+  <div class="photo-launch animated fadeInUp">
+    <form action="/search/photo" method="post" enctype="multipart/form-data">
+      <label for="camera" id="label-camera">
+        カメラを起動
+        <input type="file" accept="image/*" capture="camera" id="camera" name="camera" style="display:none;">
+      </label>
+      <label for="camera2" id="label-camera2">
+        画像を選択
+        <input type="file" accept="image/*" id="camera2" name="camera" style="display:none;">
+      </label>
+      <div id="uploader">
+        <input type="submit" value="検索" class="color-button">
+      </div>
+    </form>
+  </div>
+  <div class="photo-upload animated fadeInUp">
+    <img id="frame">
+    <script>
+      let camera = document.getElementById('camera');
+      let frame = document.getElementById('frame');
+      let camera2 = document.getElementById('camera2');
+      let frame2 = document.getElementById('frame2');
+
+      camera.addEventListener('change', function(e) {
+        let file = e.target.files[0];
+        frame.src = URL.createObjectURL(file);
+        document.getElementById('uploader').style.display = "block";
+        document.getElementById('label-camera2').style.opacity = 0.4
+      });
+      camera2.addEventListener('change', function(e) {
+        let file = e.target.files[0];
+        frame.src = URL.createObjectURL(file);
+        document.getElementById('uploader').style.display = "block";
+        document.getElementById('label-camera').style.opacity = 0.4
+      });
+    </script>
+  </div>
+</section>
+
+<style>
+  header > button {
+    display: none!important;
+  }
+  .tab-photo {
+    background-color: #EEE9E5;    
+  }
+</style>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ColorChef</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="application-name" content="">
+    <meta name="description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="article:author" content="Atsuya Kobayashi, Minami Ouchi">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alef&display=swap" rel="stylesheet">
+    <link rel="author" href="https://www.atsuya.xyz">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/script.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="top">
+        <img src="/static/img/header-eat.svg" class="icon eat">
+        <h1>color chef</h1>
+      </a>
+      <ul>
+        <li>
+          <a href="/">
+              <img src="/static/img/header-paintbrush.svg" class="icon paint">
+          </a>
+        </li>
+        <li>
+          <a href="/search/photo">
+              <img src="/static/img/header-picture.svg" class="icon picture">
+          </a>
+        </li>
+        <li>
+          <a href="/likes">
+              <img src="/static/img/header-paperclip.svg" class="icon fav">
+          </a>
+        </li>
+      </ul>
+      
+      <!-- <button onclick="history.back()">
+        <i class="fas fa-angle-double-left"></i>
+      </button> -->
+    </header>
+    {% block content %}
+      <!-- main contents -->
+    {% endblock %}
+    <p class="sub-footer">
+      &copy; Cookpad Summer Internship 2019 PBL Group A <br>
+      Engineer: Atsuya Kobayashi / Designer: Minami Ouchi
+    </p>
+    <footer>
+      <div class="footer-menu tab-color">
+        <a href="/">色</a>
+      </div>
+      <div class="footer-menu tab-photo">
+        <a href="/search/photo">写真</a>
+      </div>
+      <div class="footer-menu tab-likes">
+        <a href="/likes">♡</a>
+      </div>
+    </footer>
+  </body>
+</html>

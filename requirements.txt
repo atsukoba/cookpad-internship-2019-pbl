@@ -1,0 +1,11 @@
+flask
+pillow
+qrcode
+requests
+numpy
+pandas
+opencv-python
+imageio
+matplotlib
+colormap
+easydev

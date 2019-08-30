@@ -1,0 +1,472 @@
+@charset 'utf-8'
+
+$black: #645246
+$white: #FEFEFE
+$bg-grey: #EEE9E5
+$cookpad-color: #FF9933
+$recipe-title: #7D940A
+
+// fonts
+$serif: 'Noto Serif', serif
+$sans-serif: 'Montserrat', sans-serif
+
+*
+    margin: 0
+    padding: 0
+    color: $black
+    font-size: 16px
+    text-decoration: none!important
+    font-family: $sans-serif
+
+$element-margin: 30px
+$fixed-area-height: 50px
+$header-height: 50px
+
+header
+    width: 100vw
+    height: $header-height
+    z-index: 10
+    top: 0
+    position: fixed
+    background-color: $white
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.25)
+    display: flex!important
+
+    a.top
+        display: flex
+        justify-content: space-around
+        flex-basis: 180px
+        line-height: $header-height
+        padding-left: 15px
+        h1
+            color: $black
+            font-size: 1.5rem
+            height: $header-height
+            line-height: $header-height
+            text-align: center
+            margin: 0
+            display: inline-block
+            vertical-align: middle
+            font-family: 'Alef', sans-serif
+        img.icon.eat
+            display: inline-block
+            vertical-align: middle
+            width: 35px
+            height: 35px
+            margin-top: 7.5px
+    ul
+        display: flex!important
+        flex-basis: calc(100vw - 180px)
+        vertical-align: top
+        justify-self: flex-end
+        justify-content: space-around
+        height: $header-height
+        margin: 0
+        padding: 0 15px
+        list-style: none
+        a
+            .icon
+                width: 24px
+                height: 24px
+                color: $black
+                vertical-align: middle
+                margin-top: 13px
+
+
+    // rejected 17:50
+    button
+        position: absolute
+        top: 15px
+        left: 15px
+        i
+            font-size: 1.25rem
+            fomt-weight: light
+
+// common contents area
+section
+    padding-top: $header-height
+    h1
+        margin: $element-margin auto
+    h2
+        background-color: $black
+        height: 50px
+        margin: 10px -15px $element-margin
+        width: 100vw
+        padding: 0 15px
+        img
+            display: inline
+            line-height: 50px
+            width: 30px
+            height: 30px
+            vertical-align: middle
+        p
+            color: $white
+            display: inline
+            font-weight: bold
+            font-size: 1.25rem
+            line-height: 50px
+
+
+// top
+$palette-width: 85vw
+.color-palette
+    p
+        margin: $element-margin 0
+        text-align: center
+        font-size: 1.125rem
+    .dots
+        text-align: center
+        display: none
+        span
+            display: inline-block
+            height: 12px
+            width: 12px
+            border: solid $black 2px
+            border-radius: 6px
+            margin: 0 3px
+        span:first-child
+            background-color: $black
+    ul
+        width: $palette-width
+        margin: $element-margin auto
+        display: block
+        list-style: none
+        // for image layout
+        font-size: 0
+        .grid-element
+            display: inline-block
+            padding: 2.5vw
+            width: calc( #{$palette-width} / 3)
+            height: calc( #{$palette-width} / 3)
+        .circle
+            display: block
+            width: 100%
+            height: 100%
+            border-radius: calc(100% / 2)
+
+.color-card-block
+    margin: $element-margin 0
+    $card-width: 85vw
+    $card-height: calc(#{$card-width} / 4)
+    width: $card-width
+    height: $card-height
+    text-align: right
+    position: relative
+    font-size: 0
+    padding-right: 5vw
+    .card-recipe
+        margin: 0
+        border: solid white .5px
+        box-sizing: border-box
+        display: inline-block
+        width: $card-height
+        height: $card-height
+        background-color: #f5f5f5
+    .card-circle-wrap
+        position: absolute
+        background-color: white
+        width: $card-height
+        height: $card-height
+        border-radius: 10vw
+        left: 5vw
+        top: 0
+        .card-circle
+            width: calc(#{$card-height} - 4px)
+            height: calc(#{$card-height} - 4px)
+            border-radius: calc(#{$card-height} / 2 - 2px)
+
+// contents
+.results, .likes
+    form
+        width: fit-content
+        height: 30px
+        margin: $element-margin auto
+
+        .color-text
+            height: 100%
+            border: none
+            background-color: $bg-grey
+            padding: 0 5px
+
+        .color-button
+            background-color: $bg-grey
+            width: 50px
+            border-radius: 15px
+            border: none
+            padding: 5px
+            height: 100%
+
+    .color-display
+        margin: $element-margin auto
+        width: 90px
+        height: 90px
+        border-radius: 45px
+        &.animated
+            animation: color-disp-anime 1s ease 0s forwards
+            @keyframes color-disp-anime
+                0%
+                    opacity: 0
+                40%
+                    opacity: 1
+                    margin: $element-margin auto
+                    width: 90px
+                    height: 90px
+                    border-radius: 45px
+                100%
+                    margin: 0 auto
+                    width: 100vw
+                    height: 150px
+                    border-radius: 0
+        p
+            margin: 0 auto
+            opacity: 0
+            color: #FEFEFE
+            text-align: center
+            font-size: 1.75rem
+            font-weight: bold
+            line-height: 150px
+            color: $white
+            text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.25)
+            animation: color-disp-p-anime .75s ease 1s forwards
+            @keyframes color-disp-p-anime
+                0%
+                    opacity: 0
+                100%
+                    opacity: 1
+
+    .dots
+        display: none
+        text-align: center
+        margin-bottom: $element-margin
+        span
+            display: inline-block
+            height: 12px
+            width: 12px
+            border: solid $black 2px
+            border-radius: 6px
+            margin: 0 3px
+        span:last-child
+            background-color: $black
+
+    .image-display
+        // for image layout
+        font-size: 0
+        li
+            display: inline-block
+            overflow: hidden
+            margin: 0
+            // animation: image-disp-anime 2.75s ease 0s forwards
+            // @keyframes image-disp-anime
+            //     0%        
+            //     50%
+            //     100%
+            a
+                width: calc(100vw / 3)
+                height: calc(100vw / 3)
+                display: block
+                background-position: center
+                background-size: cover
+                border: .25px solid white
+
+
+// recipe page
+.recipe
+    .img-area
+        width: 100vw
+        height: 100vw
+        position: relative
+        .img-main
+            height: 100%
+            background-position: center
+            background-size: cover
+            background-repeat: none
+        #like
+            position: absolute
+            bottom: -75px
+            right: 15px
+            i
+                font-size: 4rem
+                color: deeppink
+    h1
+        font-size: 1.25rem
+        font-weight: bold
+        width: 100
+        margin: $element-margin 0 5px
+        padding: 0 15px
+    span.user
+        display: block
+        margin: 5px 0
+        padding: 0 15px
+        width: 100
+        font-size: .75rem
+    p.description
+        font-size: .85rem
+        margin: $element-margin 70px $element-margin 15px
+    a.cookpad
+        display: block
+        color: $black
+        background-color: white
+        width: 240px
+        height: 40px
+        margin: $element-margin auto
+        line-height: 40px
+        text-align: center
+        border: $black solid 2px
+        border-radius: 20px
+        span
+            color: $black
+            font-size: 1.125rem
+            font-weight: bold
+        &:hover
+            background-color: $black
+            span
+                color: $white
+    
+    #contain-color
+        width: 100%
+        height: 20px
+        margin: 15px 0 $element-margin
+        padding: 0 15px
+        a
+            display: inline-block
+            width: 32px
+            height: 32px
+            border-radius: 16px
+            border: 0.5px white solid
+            text-decoration: none
+
+
+// photo uploader
+.photo
+    p
+        margin-top: 60px
+        margin-bottom: 20px
+        text-align: center
+        font-size: 1.125rem
+    .photo-launch, .photo-upload
+        margin: $element-margin auto
+        form
+            font-size: 0
+        label
+            display: block
+            margin: 30px auto
+            display: inline-block
+            margin: 0px 5px
+            width: calc(50% - 10px)
+            text-align: center
+            background-color: #645246
+            color: #FEFEFE
+            padding: 10px
+            border-radius: 20px
+        img#frame, img#frame2
+            width: 100%
+            margin: $element-margin 0
+        #uploader, #uploader2
+            width: 75vw
+            height: 40px
+            line-height: 40px
+            text-align: center
+            display: none
+            color: $black
+            border: 2px $black solid
+            border-radius: 20px
+            background-color: $white
+            margin: $element-margin auto
+            input
+                background-color: transparent
+                border: none
+                width: 100%
+            img#frame
+                margin: 0
+
+
+// likes (favorites)
+.likes
+    .image-display
+        width: 100vw
+        margin: 0 -15px
+    h2
+        margin: 10px -15px 0px
+    p
+        margin-top: 60px
+        margin-bottom: 20px
+        text-align: center
+        font-size: 1.125rem
+
+// footer
+.sub-footer
+    margin: 0
+    margin-top: 60px
+    font-size: 10px
+    opacity: .5
+    height: $fixed-area-height
+    text-align: center
+
+footer
+    display: none!important
+    width: 100vw
+    height: $fixed-area-height
+    position: fixed
+    bottom: 0
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25)
+    background-color: $white
+    font-size: 0
+
+    .footer-menu
+        width: calc(100% / 3)
+        height: 100%
+        display: inline-block
+        a
+            color: $black
+            display: block
+            width: 100%
+            line-height: $fixed-area-height
+            font-size: 1.5rem
+            text-align: center
+
+.start
+    svg
+        margin: 0 -15px
+        width: 100vw
+    p
+        font-size: 1rem
+        text-align: center
+        margin: 60px auto
+        line-height: 30px
+    .bold
+        font-weight: bold
+        font-size: 1.125rem
+    .img2area
+        width: 100vw
+        height: 415px
+        margin: 0 -15px
+        overflow: hidden
+        img
+            width: 100%
+    .img3area
+        width: 100vw
+        height: 350px
+        margin: 0 -15px
+        overflow: hidden
+        img
+            width: 100%
+    .go
+        display: block
+        color: $black
+        background-color: white
+        width: 240px
+        height: 40px
+        margin: $element-margin auto
+        line-height: 40px
+        text-align: center
+        border: $black solid 2px
+        border-radius: 20px
+        span
+            color: $black
+            font-size: 1.125rem
+            font-weight: bold
+        &:hover
+            background-color: $black
+            span
+                color: $white
+

@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- color-codes:
+  #ED4524
+  #ECBD40
+  #599D3B
+  #3F8D84
+  #0F0073
+  #D22D79
+  #F2F4CF
+  #B6D6D3
+  #7382B2
+  #E4B3C8
+  #6D853F
+  #AD7127
+  #ED6D52
+  #F2994A
+  #F2C94C
+  #75140C
+  #6FCF97
+  #2F80ED
+-->
+
+<section class="container color-palette">
+  <h2>
+    <img src="/static/img/header-paintbrush-white.svg">
+    <p>色から見る</p>
+  </h2>
+  <p>
+    理想の食卓のイメージカラーを<br>教えてください
+  </p>
+  <div class="dots">
+    <span></span>
+    <span></span>
+  </div>
+  <!-- Color Sample Picker -->
+  <ul>
+    <li class="grid-element">
+      <a href="/search?color=ED4524"
+        class="circle animated zoomIn fast"
+        style="background-color: #ED4524"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=ECBD40"
+        class="circle animated zoomIn faster"
+        style="background-color: #ECBD40"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=599D3B"
+        class="circle animated zoomIn slower"
+        style="background-color: #599D3B"></a>  
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=3F8D84"
+        class="circle animated zoomIn slow"
+        style="background-color: #3F8D84"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=0F0073"
+        class="circle animated zoomIn fast"
+        style="background-color: #0F0073"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=D22D79"
+        class="circle animated zoomIn faster"
+        style="background-color: #D22D79"></a>  
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=F2F4CF"
+        class="circle animated zoomIn slower"
+        style="background-color: #F2F4CF"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=B6D6D3"
+        class="circle animated zoomIn slow"
+        style="background-color: #B6D6D3"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=7382B2"
+        class="circle animated zoomIn fast"
+        style="background-color: #7382B2"></a>  
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=E4B3C8"
+        class="circle animated zoomIn faster"
+        style="background-color: #E4B3C8"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=6D853F"
+        class="circle animated zoomIn slower"
+        style="background-color: #6D853F"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=AD7127"
+        class="circle animated zoomIn slow"
+        style="background-color: #AD7127"></a>  
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=ED6D52"
+        class="circle animated zoomIn fast"
+        style="background-color: #ED6D52"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=F2994A"
+        class="circle animated zoomIn faster"
+        style="background-color: #F2994A"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=F2C94C"
+        class="circle animated zoomIn slower"
+        style="background-color: #F2C94C"></a>  
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=75140C"
+        class="circle animated zoomIn slow"
+        style="background-color: #75140C"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=6FCF97"
+        class="circle animated zoomIn fast"
+        style="background-color: #6FCF97"></a>
+    </li>
+    <li class="grid-element">
+      <a href="/search?color=2F80ED"
+        class="circle animated zoomIn faster"
+        style="background-color: #2F80ED"></a>  
+    </li>
+  </ul>
+</section>
+
+<style>
+  header > button {
+    display: none!impotant;
+  }
+  .tab-color {
+    background-color: #EEE9E5;
+  }
+</style>
+
+{% endblock %}
